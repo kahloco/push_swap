@@ -6,11 +6,11 @@
 /*   By: ckakoz <ckakoz@student.42malaga.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 19:51:15 by ckakoz            #+#    #+#             */
-/*   Updated: 2024/06/22 18:40:24 by ckakoz           ###   ########.fr       */
+/*   Updated: 2024/06/25 14:11:40 by ckakoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 
 static void	set_target_b(t_stack_node *a, t_stack_node *b)
 {

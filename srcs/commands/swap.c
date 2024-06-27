@@ -6,11 +6,11 @@
 /*   By: ckakoz <ckakoz@student.42malaga.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 08:55:55 by ckakoz            #+#    #+#             */
-/*   Updated: 2024/06/20 09:07:27 by ckakoz           ###   ########.fr       */
+/*   Updated: 2024/06/25 14:02:53 by ckakoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../inc/push_swap.h"
 
 static void	swap(t_stack_node **head)
 {

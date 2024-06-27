@@ -6,11 +6,11 @@
 /*   By: ckakoz <ckakoz@student.42malaga.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 16:57:50 by ckakoz            #+#    #+#             */
-/*   Updated: 2024/06/22 19:16:16 by ckakoz           ###   ########.fr       */
+/*   Updated: 2024/06/27 09:44:07 by ckakoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 
 static long	ft_atol(const char *str)
 {
@@ -19,12 +19,13 @@ static long	ft_atol(const char *str)
 
 	result = 0;
 	sign = 1;
-	while (*str == ' ' || *str == '\t' || *str = '\n' || \
-			*str == '\r' || *str == '\f' || *str == '\v')
+	while (*str == ' ' || *str == '\t' || *str == '\n'
+		|| *str == '\r' || *str == '\f' || *str == '\v')
 		str++;
 	if (*str == '-' || *str == '+')
 	{
-		sign = -1;
+		if (*str == '-')
+			sign = -1;
 		str++;
 	}
 	while (ft_isdigit(*str))
@@ -84,14 +85,30 @@ t_stack_node	*get_cheapest(t_stack_node *stack)
 	while (stack)
 	{
 		if (stack->cheapest)
-			return (stack)
+			return (stack);
 		stack = stack->next;
 	}
 	return (NULL);
 }
 
 void	ready_for_push(t_stack_node **stack,
-						t_stack_node *top_node, char stack_name)
+						t_stack_node *n, char c)
 {
-	while
+	while (*stack != n)
+	{
+		if (c == 'a')
+		{
+			if (top_node->above_median)
+				ra(stack, false);
+			else
+				rra(stack, false);
+		}
+		else if (c == 'b')
+		{
+			if (n->above_median)
+				rb(stack, false);
+			else
+				rrb(stack, false);
+		}
+	}
 }

@@ -6,11 +6,11 @@
 /*   By: ckakoz <ckakoz@student.42malaga.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 09:22:48 by ckakoz            #+#    #+#             */
-/*   Updated: 2024/06/20 19:50:12 by ckakoz           ###   ########.fr       */
+/*   Updated: 2024/06/25 14:03:12 by ckakoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../inc/push_swap.h"
 
 static void	rotate_both(t_stack_node **a, t_stack_node **b,
 						t_stack_node *cheapest_node)

@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.h                                        :+:      :+:    :+:   */
+/*   sort_three.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ckakoz <ckakoz@student.42malaga.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/17 11:51:53 by ckakoz            #+#    #+#             */
-/*   Updated: 2024/02/21 12:43:18 by ckakoz           ###   ########.fr       */
+/*   Created: 2024/06/18 18:29:05 by ckakoz            #+#    #+#             */
+/*   Updated: 2024/06/25 14:03:02 by ckakoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "../../inc/push_swap.h"
 
-# include <stdarg.h>
-# include <stdint.h>
-# include <unistd.h>
+void	sort_three(t_stack_node **a)
+{
+	t_stack_node	*biggest_node;
 
-int	ft_printf(const char *str, ...);
-int	ft_putchar(int c);
-int	ft_putstr(char *str);
-int	ft_printptr(uintptr_t ptr);
-int	ft_putnbr(int n);
-int	ft_putunsigned(unsigned int n);
-int	ft_puthex(unsigned int n, const char format);
-
-#endif
+	biggest_node = find_max(*a);
+	if (biggest_node == *a)
+		ra(a, false);
+	else if ((*a)->next == biggest_node)
+		rra(a, false);
+	if ((*a)->nbr > (*a)->next->nbr)
+		sa(a, false);
+}

@@ -6,11 +6,11 @@
 /*   By: ckakoz <ckakoz@student.42malaga.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 18:39:42 by ckakoz            #+#    #+#             */
-/*   Updated: 2024/06/22 19:16:18 by ckakoz           ###   ########.fr       */
+/*   Updated: 2024/06/27 08:59:04 by ckakoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 
 static int	count_words(char *str, char c)
 {

@@ -6,11 +6,11 @@
 /*   By: ckakoz <ckakoz@student.42malaga.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 18:30:33 by ckakoz            #+#    #+#             */
-/*   Updated: 2024/06/19 20:21:19 by ckakoz           ###   ########.fr       */
+/*   Updated: 2024/06/25 14:11:40 by ckakoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "../inc/push_swap.h"
 
 int	main(int argc, char **argv)
 {

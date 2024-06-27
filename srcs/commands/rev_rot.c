@@ -6,11 +6,11 @@
 /*   By: ckakoz <ckakoz@student.42malaga.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 09:07:59 by ckakoz            #+#    #+#             */
-/*   Updated: 2024/06/20 09:18:33 by ckakoz           ###   ########.fr       */
+/*   Updated: 2024/06/25 14:03:25 by ckakoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../push_swap.h"
+#include "../../inc/push_swap.h"
 
 static void	rev_rotate(t_stack_node **stack)
 {
