@@ -6,7 +6,7 @@
 /*   By: ckakoz <ckakoz@student.42malaga.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 16:57:50 by ckakoz            #+#    #+#             */
-/*   Updated: 2024/06/12 09:06:28 by ckakoz           ###   ########.fr       */
+/*   Updated: 2024/06/22 19:16:16 by ckakoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,14 +65,33 @@ void	init_stack_a(t_stack_node **a, char **argv)
 	i = 0;
 	while (argv[i])
 	{
-		if (error_syntax(argv[i]))
+		if (syntax_errors(argv[i]))
 			free_errors(a);
 		nbr = ft_atol(argv[i]);
 		if (nbr > INT_MAX || nbr < INT_MIN)
 			free_errors(a);
-		if (error_duplicate(*a, (int)nbr))
+		if (duplicate_errors(*a, (int)nbr))
 			free_errors(a);
 		append_node(a, (int)nbr);
 		i++;
 	}
+}
+
+t_stack_node	*get_cheapest(t_stack_node *stack)
+{
+	if (!stack)
+		return (NULL);
+	while (stack)
+	{
+		if (stack->cheapest)
+			return (stack)
+		stack = stack->next;
+	}
+	return (NULL);
+}
+
+void	ready_for_push(t_stack_node **stack,
+						t_stack_node *top_node, char stack_name)
+{
+	while
 }

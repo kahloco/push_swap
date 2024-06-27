@@ -6,7 +6,7 @@
 /*   By: ckakoz <ckakoz@student.42malaga.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 18:39:42 by ckakoz            #+#    #+#             */
-/*   Updated: 2024/06/10 18:56:36 by ckakoz           ###   ########.fr       */
+/*   Updated: 2024/06/22 19:16:18 by ckakoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,5 +60,29 @@ static char	*get_next_word(char *str, char c)
 
 char	**split(char *str, char c)
 {
-	
+	int		words_count;
+	char	**result;
+	int		i;
+
+	i = 0;
+	words_count = count_words(str, c);
+	if (!words_count)
+		exit(1);
+	result = malloc(sizeof(char *) * (size_t)(words_count + 2));
+	if (!result)
+		return (NULL);
+	while (words_count-- >= 0)
+	{
+		if (i == 0)
+		{
+			result[i] = malloc(sizeof(char));
+			if (!result[i])
+				return (NULL);
+			result[i++][0] = '\0';
+			continue ;
+		}
+		result[i++] = get_next_word(str, c);
+	}
+	result[i] = NULL;
+	return (result);
 }
