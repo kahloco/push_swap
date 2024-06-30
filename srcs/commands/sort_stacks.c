@@ -6,7 +6,7 @@
 /*   By: ckakoz <ckakoz@student.42malaga.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 09:22:48 by ckakoz            #+#    #+#             */
-/*   Updated: 2024/06/25 14:03:12 by ckakoz           ###   ########.fr       */
+/*   Updated: 2024/06/30 19:37:06 by ckakoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,17 @@ static void	rotate_both(t_stack_node **a, t_stack_node **b,
 {
 	while (*b != cheapest_node->target_node && *a != cheapest_node)
 		rr(a, b, false);
-	current_index(a);
-	current_index(b);
+	current_index(*a);
+	current_index(*b);
+}
+
+static void	rev_rotate_both(t_stack_node **a, t_stack_node **b,
+							t_stack_node *cheapest_node)
+{
+	while (*b != cheapest_node->target_node && *a != cheapest_node)
+		rrr(a, b, false);
+	current_index(*a);
+	current_index(*b);
 }
 
 static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
@@ -31,14 +40,14 @@ static void	move_a_to_b(t_stack_node **a, t_stack_node **b)
 	else if (!(cheapest_node->above_median)
 		&& !(cheapest_node->target_node->above_median))
 		rev_rotate_both(a, b, cheapest_node);
-	prep_for_push(a, cheapest_node, 'a');
-	prep_for_push(b, cheapest_node->target_node, 'b');
+	ready_for_push(a, cheapest_node, 'a');
+	ready_for_push(b, cheapest_node->target_node, 'b');
 	pb(b, a, false);
 }
 
 static void	move_b_to_a(t_stack_node **a, t_stack_node **b)
 {
-	prep_for_push(a, (*b)->target_node, 'a');
+	ready_for_push(a, (*b)->target_node, 'a');
 	pa(a, b, false);
 }
 
@@ -57,7 +66,7 @@ void	sort_stacks(t_stack_node **a, t_stack_node **b)
 {
 	int	len_a;
 
-	len_a = stack_len(*a);
+	len_a = stack_length(*a);
 	if (len_a-- > 3 && !stack_sorted(*a))
 		pb(b, a, false);
 	if (len_a-- > 3 && !stack_sorted(*a))

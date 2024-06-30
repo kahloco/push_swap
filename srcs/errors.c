@@ -6,7 +6,7 @@
 /*   By: ckakoz <ckakoz@student.42malaga.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 18:41:27 by ckakoz            #+#    #+#             */
-/*   Updated: 2024/06/25 14:03:56 by ckakoz           ###   ########.fr       */
+/*   Updated: 2024/06/30 19:36:35 by ckakoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 int	syntax_errors(char *input)
 {
 	if (!(*input == '+' || *input == '-'
-			|| *input >= '0' && *input <= '9'))
+			|| (*input >= '0' && *input <= '9')))
 		return (1);
 	if ((*input == '+' || *input == '-')
 		&& !(input[1] >= '0' && input[1] <= '9'))
 		return (1);
-	while (++input)
+	while (*++input)
 	{
 		if (!(*input >= '0' && *input <= '9'))
 			return (1);

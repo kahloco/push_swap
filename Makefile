@@ -1,54 +1,55 @@
 NAME 			= push_swap
 
-LIBFT 			= ./libft/libft.a
+LIBFT_DIR		= libft/
 INC 			= inc/
-SRC 			= srcs/
-OBJ 			= obj/
+SRC_DIR			= srcs/
+OBJ_DIR 		= obj/
 
 CC 				= gcc
-CFLAGS			= -Wall -Werror -Wextra -I
-RM 				= rm -f
+CFLAGS			= -Wall -Werror -Wextra -I$(LIBFT_DIR) -I$(INC)
+RM				= rm -rf
 
-COMMANDS_DIR	= $(SRC)commands/push.c \
-				  $(SRC)commands/rotate.c \
-				  $(SRC)commands/swap.c \
-				  $(SRC)commands/rev_rot.c \
-				  $(SRC)commands/sort_stacks.c \
-				  $(SRC)commands/sort_three.c
+COMMANDS_DIR	= $(SRC_DIR)commands/push.c \
+				  $(SRC_DIR)commands/rotate.c \
+				  $(SRC_DIR)commands/swap.c \
+				  $(SRC_DIR)commands/rev_rot.c \
+				  $(SRC_DIR)commands/sort_stacks.c \
+				  $(SRC_DIR)commands/sort_three.c
 
-PUSH_SWAP       = $(SRC)errors.c \
-				  $(SRC)init_a_to_b.c \
-				  $(SRC)init_b_to_a.c \
-				  $(SRC)main.c \
-				  $(SRC)split.c \
-				  $(SRC)stack_init.c \
-				  $(SRC)stack_utils.c \
+PUSH_SWAP       = $(SRC_DIR)errors.c \
+				  $(SRC_DIR)init_a_to_b.c \
+				  $(SRC_DIR)init_b_to_a.c \
+				  $(SRC_DIR)main.c \
+				  $(SRC_DIR)split.c \
+				  $(SRC_DIR)stack_init.c \
+				  $(SRC_DIR)stack_utils.c \
 
+SRCS			= $(COMMANDS_DIR) $(PUSH_SWAP)
 
-SRC				= $(COMMANDS_DIR) $(PUSH_SWAP)
+OBJS			= $(patsubst $(SRC_DIR)%.c, $(OBJ_DIR)%.o, $(SRCS))
 
-OBJ				= $(patsubst $(SRC)%.c, $(OBJ)%.o, $(SRC))
+LIBFT			= $(LIBFT_DIR)libft.a
+LIBFT_MAKE		= $(MAKE) -C $(LIBFT_DIR)
 
-start:          @make all
+all: 			$(LIBFT) $(NAME)
 
-$(LIBFT):		@make -C ./libft
+$(NAME): 		$(OBJS) $(LIBFT)
+				$(CC) $(CFLAGS) -o $(NAME) $(OBJS) -L$(LIBFT_DIR) -lft
 
-all: $(NAME)
+$(OBJ_DIR)%.o: 	$(SRC_DIR)%.c
+				mkdir -p $(@D)
+				$(CC) $(CFLAGS) -c $< -o $@
 
-$(NAME): 		$(LIBFT) $(OBJ)
-				@$(CC) $(CFLAGS) $(INC) -o $(NAME) $(OBJ) $(LIBFT)
+$(LIBFT):		$(LIBFT_MAKE)
 
-$(OBJ)%.o:		$(SRC)%.c
-				@mkdir -p $(@D)
-				@$(CC) $(CFLAGS) $(INC) -c $< -o $@
+clean:
+				$(RM) $(OBJ_DIR)
+				$(LIBFT_MAKE) clean
 
-clean:			@$(RM) -r $(OBJ)
-				@make clean -c ./libft
+fclean: 		
+				$(RM) $(NAME)
+				$(LIBFT_MAKE) fclean
 
-fclean: 		clean
-				@$(RM) $(NAME)
-				@$(RM) $(LIBFT)
+re: 			fclean all
 
-re: fclean all
-
-.PHONY: start all clean fclean re
+.PHONY: 		all clean fclean re

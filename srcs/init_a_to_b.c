@@ -6,7 +6,7 @@
 /*   By: ckakoz <ckakoz@student.42malaga.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/18 18:34:29 by ckakoz            #+#    #+#             */
-/*   Updated: 2024/06/25 14:11:39 by ckakoz           ###   ########.fr       */
+/*   Updated: 2024/06/30 18:31:12 by ckakoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	current_index(t_stack_node *stack)
 	i = 0;
 	if (!stack)
 		return ;
-	median = stack_len(stack) / 2;
+	median = stack_length(stack) / 2;
 	while (stack)
 	{
 		stack->index = i;
@@ -66,8 +66,8 @@ static void	cost_analysis_a(t_stack_node *a, t_stack_node *b)
 	int	len_a;
 	int	len_b;
 
-	len_a = stack_len(a);
-	len_b = stack_len(b);
+	len_a = stack_length(a);
+	len_b = stack_length(b);
 	while (a)
 	{
 		a->push_cost = a->index;

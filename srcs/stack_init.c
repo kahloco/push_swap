@@ -6,7 +6,7 @@
 /*   By: ckakoz <ckakoz@student.42malaga.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/11 16:57:50 by ckakoz            #+#    #+#             */
-/*   Updated: 2024/06/27 09:44:07 by ckakoz           ###   ########.fr       */
+/*   Updated: 2024/06/30 19:36:46 by ckakoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,9 @@ t_stack_node	*get_cheapest(t_stack_node *stack)
 }
 
 void	ready_for_push(t_stack_node **stack,
-						t_stack_node *n, char c)
+						t_stack_node *top_node, char c)
 {
-	while (*stack != n)
+	while (*stack != top_node)
 	{
 		if (c == 'a')
 		{
@@ -105,7 +105,7 @@ void	ready_for_push(t_stack_node **stack,
 		}
 		else if (c == 'b')
 		{
-			if (n->above_median)
+			if (top_node->above_median)
 				rb(stack, false);
 			else
 				rrb(stack, false);

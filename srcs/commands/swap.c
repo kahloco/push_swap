@@ -6,7 +6,7 @@
 /*   By: ckakoz <ckakoz@student.42malaga.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 08:55:55 by ckakoz            #+#    #+#             */
-/*   Updated: 2024/06/25 14:02:53 by ckakoz           ###   ########.fr       */
+/*   Updated: 2024/06/30 19:37:16 by ckakoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,4 +46,3 @@ void	ss(t_stack_node **a, t_stack_node **b, bool print)
 	if (!print)
 		write(1, "ss\n", 3);
 }
-

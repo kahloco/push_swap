@@ -6,7 +6,7 @@
 /*   By: ckakoz <ckakoz@student.42malaga.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 18:39:42 by ckakoz            #+#    #+#             */
-/*   Updated: 2024/06/27 08:59:04 by ckakoz           ###   ########.fr       */
+/*   Updated: 2024/06/30 19:36:10 by ckakoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ static char	*get_next_word(char *str, char c)
 	next_word = malloc((size_t)len * sizeof(char) + 1);
 	if (!next_word)
 		return (NULL);
-	while ((s[cursor] != c) && str[cursor])
+	while ((str[cursor] != c) && str[cursor])
 		next_word[i++] = str[cursor++];
 	next_word[i] = '\0';
 	return (next_word);

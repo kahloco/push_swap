@@ -6,7 +6,7 @@
 /*   By: ckakoz <ckakoz@student.42malaga.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 18:30:33 by ckakoz            #+#    #+#             */
-/*   Updated: 2024/06/25 14:11:40 by ckakoz           ###   ########.fr       */
+/*   Updated: 2024/06/30 19:36:26 by ckakoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,11 +24,11 @@ int	main(int argc, char **argv)
 	else if (argc == 2)
 		argv = split(argv[1], ' ');
 	init_stack_a(&a, argv + 1);
-	if (!stack_sorted[a])
+	if (!stack_sorted(a))
 	{
-		if (stack_len(a) == 2)
+		if (stack_length(a) == 2)
 			sa(&a, false);
-		else if (stack_len(a) == 3)
+		else if (stack_length(a) == 3)
 			sort_three(&a);
 		else
 			sort_stacks(&a, &b);
