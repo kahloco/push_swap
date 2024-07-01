@@ -6,7 +6,7 @@
 /*   By: ckakoz <ckakoz@student.42malaga.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 18:21:51 by ckakoz            #+#    #+#             */
-/*   Updated: 2024/06/27 09:44:03 by ckakoz           ###   ########.fr       */
+/*   Updated: 2024/07/01 15:45:49 by ckakoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,6 @@ typedef struct s_stack_node
 	struct s_stack_node	*prev;
 }	t_stack_node;
 
-//Algorithms
-void			sort_stacks(t_stack_node **a, t_stack_node **b);
-void			sort_three(t_stack_node **a);
-
 // Commands
 void			pa(t_stack_node **a, t_stack_node **b, bool print);
 void			pb(t_stack_node **b, t_stack_node **a, bool print);
@@ -47,6 +43,18 @@ void			rra(t_stack_node **a, bool print);
 void			rrb(t_stack_node **b, bool print);
 void			rrr(t_stack_node **a, t_stack_node **b, bool print);
 
+//Algorithms
+void			sort_stacks(t_stack_node **a, t_stack_node **b);
+void			sort_three(t_stack_node **a);
+
+// Static helper functions
+void			rotate_both(t_stack_node **a, t_stack_node **b,
+					t_stack_node *cheapest_node);
+void			rev_rotate_both(t_stack_node **a,
+					t_stack_node **b, t_stack_node *cheapest_node);
+void			move_a_to_b(t_stack_node **a, t_stack_node **b);
+void			move_b_to_a(t_stack_node **a, t_stack_node **b);
+void			min_on_top(t_stack_node **a);
 //Stack utils
 int				stack_length(t_stack_node *stack);
 t_stack_node	*find_last(t_stack_node *stack);
