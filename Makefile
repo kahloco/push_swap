@@ -24,7 +24,7 @@ PUSH_SWAP_SRC   = errors.c \
 				  main.c \
 				  split.c \
 				  stack_init.c \
-				  stack_utils.c \
+				  stack_utils.c 
 
 SRCS			= $(addprefix $(SRC_DIR)/, $(COMMANDS_SRC) $(PUSH_SWAP_SRC))
 

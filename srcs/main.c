@@ -6,7 +6,7 @@
 /*   By: ckakoz <ckakoz@student.42malaga.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/10 18:30:33 by ckakoz            #+#    #+#             */
-/*   Updated: 2024/07/01 15:06:49 by ckakoz           ###   ########.fr       */
+/*   Updated: 2024/07/02 11:58:32 by ckakoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	main(int argc, char **argv)
 
 	a = NULL;
 	b = NULL;
-	if (argc < 2 || (argc == 2 && !argv[1][0]))
+	if (argc == 1 || (argc == 2 && !argv[1][0]))
 		return (1);
 	else if (argc == 2)
 		argv = split(argv[1], ' ');

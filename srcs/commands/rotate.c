@@ -6,7 +6,7 @@
 /*   By: ckakoz <ckakoz@student.42malaga.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/20 08:28:50 by ckakoz            #+#    #+#             */
-/*   Updated: 2024/06/30 19:36:55 by ckakoz           ###   ########.fr       */
+/*   Updated: 2024/07/02 12:46:39 by ckakoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ static void	rotate(t_stack_node **stack)
 {
 	t_stack_node	*last_node;
 
-	if (!*stack || (*stack)->next)
+	if (!*stack || !(*stack)->next)
 		return ;
 	last_node = find_last(*stack);
 	last_node->next = *stack;

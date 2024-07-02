@@ -6,7 +6,7 @@
 /*   By: ckakoz <ckakoz@student.42malaga.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/23 14:57:15 by ckakoz            #+#    #+#             */
-/*   Updated: 2024/06/30 19:35:21 by ckakoz           ###   ########.fr       */
+/*   Updated: 2024/07/02 12:22:10 by ckakoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,7 +79,7 @@ t_stack_node	*find_max(t_stack_node *stack)
 	max = LONG_MIN;
 	while (stack)
 	{
-		if (stack->nbr < max)
+		if (stack->nbr > max)
 		{
 			max = stack->nbr;
 			max_node = stack;
