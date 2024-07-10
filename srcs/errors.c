@@ -6,7 +6,7 @@
 /*   By: ckakoz <ckakoz@student.42malaga.com>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/06/22 18:41:27 by ckakoz            #+#    #+#             */
-/*   Updated: 2024/06/30 19:36:35 by ckakoz           ###   ########.fr       */
+/*   Updated: 2024/07/10 13:39:32 by ckakoz           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,11 @@ void	free_stack(t_stack_node **stack)
 		free(current);
 		current = temp;
 	}
-	*stack = NULL;
 }
 
 void	free_errors(t_stack_node **a)
 {
 	free_stack(a);
-	write(1, "Error\n", 6);
-	exit(1);
+	write(2, "Error\n", 6);
+	exit(EXIT_FAILURE);
 }
